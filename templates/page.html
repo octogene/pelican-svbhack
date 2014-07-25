@@ -2,7 +2,7 @@
 {% block title %}{{ page.title }}{% endblock %}
 
 {% block header %}
-<p>Updated on {{ page.locale_date }}</p>
+<p>{% trans %}Updated on{% endtrans %} {{ page.locale_date }}</p>
 {% endblock %}
 
 {% block content %}
@@ -17,5 +17,5 @@
 {% endblock %}
 
 {% block footer %}
-<p><a href="{{ SITEURL }}/" class="button_accent">&larr; Back to Index</a></p>
+<p><a href="{{ SITEURL }}/" class="button_accent">&larr; {% trans %}Back to Index{% endtrans %}</a></p>
 {% endblock %}

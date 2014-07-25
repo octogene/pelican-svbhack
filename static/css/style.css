@@ -16,19 +16,48 @@ hr {
   height: 1px;
   border: none;
 }
+aside div.social {
+    font-size: 25px;
+    text-align: center;
+}
+aside div#lang_buttons {
+    padding-left: 10px;
+    top: 0px;
+    position: relative;
+    padding-bottom: 30px;
+}
+aside div#lang_buttons a {
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+aside div#lang_buttons a.active {
+    color: #0e94ec;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
 aside div#user_meta {
   padding: 40px;
   text-align: center;
 }
+aside div#user_meta img {
+  margin: auto;
+  border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+}
 aside div#user_meta h2 {
-  margin: 15px 0 5px 0;
+  text-align: center;
 }
 aside div#user_meta p {
   margin: 0 0 15px 0;
   font-size: 14px;
 }
 aside div#user_meta ul {
-  margin: 40px 0 0 0;
+  text-align: center;
   padding-left: 0;
   font-size: 16px;
   list-style-type: none;
@@ -97,20 +126,26 @@ main article div.article_meta {
   font-size: 12px;
   color: #999999;
 }
+
+main article div.flattr {
+  float: right;
+  width: 115px;
+  height: 25px;
+}
 main footer {
   border-top: #eeeeee 1px solid;
   border-bottom: #eeeeee 1px solid;
   padding: 40px;
 }
 main footer a.button_accent {
-  padding: 10px;
+  padding: 5px;
   border: 2px solid #0e94ec;
-  border-radius: 20px;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
+  border-radius: 30px;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
   text-transform: uppercase;
   color: #0e94ec;
-  font-size: 18px;
+  font-size: 14px;
 }
 main footer a.button_accent:hover {
   color: #ffffff;

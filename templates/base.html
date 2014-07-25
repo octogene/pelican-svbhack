@@ -3,13 +3,14 @@
 
 <head>
   <!-- ## for client-side less
-  <link rel="stylesheet/less" type="text/css" href="{{ SITEURL }}/theme/css/style.less">
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
+  <link rel="stylesheet/less" type="text/css" href="/theme/css/style.less">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
   -->
-  <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.css">
 
-  <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/pygments.css">
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT+Sans|PT+Serif|PT+Mono">
+  <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=PT+Sans|PT+Serif|PT+Mono">
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,10 +18,10 @@
   <meta name="description" content="Posts and writings by {{ AUTHOR }}">
 
   {% if FEED_ALL_ATOM %}
-  <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
+  <link href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
   {% endif %}
   {% if FEED_ALL_RSS %}
-  <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Full RSS Feed" />
+  <link href="{{ SITEURL }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Full RSS Feed" />
   {% endif %}
 
   {% block head %}
@@ -35,12 +36,21 @@
 
 <body>
   <aside>
+    {% if lang_siteurls %}
+    <div id="lang_buttons">
+    <p>
+    {% for lang, url in lang_siteurls.items() %}
+    <a{% if lang == DEFAULT_LANG %} class="active"{% endif %} href="{{ url }}">{{ lang }}</a> &#124;
+    {% endfor %}
+    </p>
+    </div>
+    {% endif %}
     <div id="user_meta">
       <a href="{{ SITEURL }}">
         {% if USER_LOGO_URL %}
         <img src="{{ USER_LOGO_URL }}" alt="logo">
         {% else %}
-        <img src="{{ SITEURL }}/theme/images/logo.png" alt="logo">
+        <img src="/theme/images/logo.png" alt="logo">
         {% endif %}
       </a>
       <h2><a href="{{ SITEURL }}">{{ AUTHOR }}</a></h2>
@@ -55,10 +65,15 @@
         {% for name, link in LINKS %}
         <li><a href="{{ link }}" target="_blank">{{ name }}</a></li>
         {% endfor %}
-        {% for name, link in SOCIAL %}
-        <li><a href="{{ link }}" target="_blank">{{ name }}</a></li>
-        {% endfor %}
       </ul>
+      {% if SOCIAL %}
+      <div class="social">
+      &#124;
+      {% for name, link, class in SOCIAL %}
+        <a href="{{ link }}" target="_blank"><i class="fa {{class}}"></i></a> &#124;
+      {% endfor %}
+      </div>
+      {% endif %}
     </div>
   </aside>
 
@@ -66,12 +81,12 @@
     <header>
       {% block header %}
       <p>
-      <a href="{{ SITEURL }}">Index</a> &#124; <a href="{{ SITEURL }}/archives.html">Archives</a>
+      <a href="{{ SITEURL }}">{% trans %}Index{% endtrans %}</a> &#124; <a href="{{ SITEURL }}/archives.html">{% trans %}Archives{% endtrans %}</a>
       {% if FEED_ALL_ATOM %}
-      &#124; <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">Atom Feed</a>
+      &#124; <a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}">{% trans %}Atom Feed{% endtrans %}</a>
       {% endif %}
       {% if FEED_ALL_RSS %}
-      &#124; <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}">RSS Feed</a>
+      &#124; <a href="{{ SITEURL }}/{{ FEED_ALL_RSS }}">{% trans %}RSS Feed{% endtrans %}</a>
       {% endif %}
       </p>
       {% endblock header %}
@@ -86,7 +101,12 @@
     </footer>
 
     <div id="ending_message">
-      <p>&copy; {{ AUTHOR }}. Built using <a href="http://getpelican.com" target="_blank">Pelican</a>. Theme by Giulio Fidente on <a href="https://github.com/giulivo/pelican-svbhack" target="_blank">github</a>. {% if INTERNET_DEFENSE_LEAGUE %}Member of the <a href="http://internetdefenseleague.org">Internet Defense League</a>{% endif %}.</p>
+      <p>&copy; {{ AUTHOR }}. {% trans %}Built using {% endtrans %}<a href="http://getpelican.com" target="_blank">Pelican</a>. {% trans %}Theme adapted from pelican-svbhack available on{% endtrans %} <a href="https://github.com/giulivo/pelican-svbhack" target="_blank">github</a>.</p>
+      <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> {% trans %}This work is licensed under a{% endtrans %} <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">{% trans %}Creative Commons License{% endtrans %} 4.0 International</a>.</p>
+      {% if INTERNET_DEFENSE_LEAGUE %}
+      <p>Member of the <a href="http://internetdefenseleague.org">Internet Defense League</a>
+      .</p>
+      {% endif %}
     </div>
   </main>
   {% include "modules/idl.html" %}

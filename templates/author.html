@@ -1,6 +1,6 @@
 {% extends "index.html" %}
-{% block title %}Author: {{ author }}{% endblock %}
+{% block title %}{% trans %}Author{% endtrans %}: {{ author }}{% endblock %}
 
 {% block header %}
-<p>Author: {{ author }}</p>
+<p>{% trans %}Author{% endtrans %}: {{ author }}</p>
 {% endblock %}

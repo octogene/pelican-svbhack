@@ -6,7 +6,7 @@
 {% block title %}{{ article.title }}{% endblock %}
 
 {% block header %}
-<p>Posted on {{ article.locale_date }}</p>
+<p>{% trans %}Posted on{% endtrans %} {{ article.locale_date }}</p>
 {% endblock %}
 
 {% block content %}
@@ -18,16 +18,16 @@
     {{ article.content }}
   </div>
   <div class="article_meta">
-    <p>Category: <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></p>
+    <p>{% trans %}Category{% endtrans %}: <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></p>
     {% if article.tags %}
-    <p>Tags:
+    <p>{% trans %}Tags{% endtrans %}:
       {% for tag in article.tags %}
       <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %},{% endif %}
       {% endfor %}
     </p>
     {% endif %}
     {% if DISQUS_SITENAME %}
-    <p>Comments: <a href="#" onclick="javascript:toggleComments();return false;">toggle</a></p>
+    <p>{% trans %}Comments{% endtrans %}: <a href="#" onclick="javascript:toggleComments();return false;">toggle</a></p>
     {% endif %}
   </div>
 
@@ -49,7 +49,7 @@
 {% endblock %}
 
 {% block footer %}
-<p><a href="{{ SITEURL }}/" class="button_accent">&larr; Back to Index</a></p>
+<p><a href="{{ SITEURL }}/" class="button_accent">&larr; {% trans %}Back to Index{% endtrans %}</a></p>
 <script language="javascript">
     function toggleComments() {
         var commentDiv = document.getElementById("article_comments");
