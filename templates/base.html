@@ -72,6 +72,12 @@
       {% for name, link, class in SOCIAL %}
         <a href="{{ link }}" target="_blank"><i class="fa {{class}}"></i></a> &#124;
       {% endfor %}
+      <script language="JavaScript"><!--
+      var name = "ooctogene";
+      var domain = "gmail.com";
+      document.write('<a href=\"mailto:' + name + '@' + domain + '\">');
+      document.write('<i class=\"fa fa-envelope\"></i>' + '</a> &#124;');
+      // --></script>
       </div>
       {% endif %}
     </div>
