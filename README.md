@@ -40,9 +40,9 @@ Supports a number of common global variables but patches are welcomed if you nee
 
 - `INTERNET_DEFENSE_LEAGUE` set this to `True` if you want to enable the [Internet Defense League](http://internetdefenseleague.org) code
 
--  SOCIAL_ICONIFY set this to True if you want to show social links as Font Awesome icons.
+- `SOCIAL_ICONIFY` set this to True if you want to show social links as Font Awesome icons.
 
--  SOCIAL_ICONS dict containing icon class depending of SOCIAL name: SOCIAL_ICONS = {'Twitter': 'fa-twitter'}
+- `SOCIAL_ICONS` dict containing icon class depending of `SOCIAL` name: `SOCIAL_ICONS = {'Twitter': 'fa-twitter'}`
 
 When developing locally, you may want to set the following variable: `SITEURL = http://localhost:8000`
 
