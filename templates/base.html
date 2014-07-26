@@ -10,8 +10,11 @@
 
   <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=PT+Sans|PT+Serif|PT+Mono">
+  
+  {% if SOCIAL_ICONIFY %}
   <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
-
+  {% endif %}
+  
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="{{ AUTHOR }}">
@@ -65,19 +68,19 @@
         {% for name, link in LINKS %}
         <li><a href="{{ link }}" target="_blank">{{ name }}</a></li>
         {% endfor %}
+        {% if SOCIAL and not SOCIAL_ICONIFY %}
+        {% for name, link in SOCIAL %}
+        <li><a href="{{ link }}" target="_blank">{{ name }}</a></li>
+        {% endfor %}
+        {% endif %}
       </ul>
-      {% if SOCIAL %}
+      {% if SOCIAL and SOCIAL_ICONIFY%}
       <div class="social">
       &#124;
-      {% for name, link, class in SOCIAL %}
-        <a href="{{ link }}" target="_blank"><i class="fa {{class}}"></i></a> &#124;
+      {% for name, link in SOCIAL %}
+	{% set icon = SOCIAL_ICONS[name] %}
+        <a href="{{ link }}" target="_blank"><i class="{{ icon }}"></i></a> &#124;
       {% endfor %}
-      <script language="JavaScript"><!--
-      var name = "ooctogene";
-      var domain = "gmail.com";
-      document.write('<a href=\"mailto:' + name + '@' + domain + '\">');
-      document.write('<i class=\"fa fa-envelope\"></i>' + '</a> &#124;');
-      // --></script>
       </div>
       {% endif %}
     </div>
@@ -107,7 +110,7 @@
     </footer>
 
     <div id="ending_message">
-      <p>&copy; {{ AUTHOR }}. {% trans %}Built using {% endtrans %}<a href="http://getpelican.com" target="_blank">Pelican</a>. {% trans %}Theme adapted from pelican-svbhack available on{% endtrans %} <a href="https://github.com/giulivo/pelican-svbhack" target="_blank">github</a>.</p>
+      <p>&copy; {{ AUTHOR }}. {% trans %}Built using{% endtrans %} <a href="http://getpelican.com" target="_blank">Pelican</a>. {% trans %}Theme adapted from pelican-svbhack available on{% endtrans %} <a href="https://github.com/giulivo/pelican-svbhack" target="_blank">github</a>.</p>
       <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> {% trans %}This work is licensed under a{% endtrans %} <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">{% trans %}Creative Commons License{% endtrans %} 4.0 International</a>.</p>
       {% if INTERNET_DEFENSE_LEAGUE %}
       <p>Member of the <a href="http://internetdefenseleague.org">Internet Defense League</a>
