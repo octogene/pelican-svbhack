@@ -35,7 +35,7 @@ aside div#lang_buttons a {
     text-transform: uppercase;
 }
 aside div#lang_buttons a.active {
-    color: #0e94ec;
+    color: #ec930e;
 }
 aside div#user_meta {
   display: inline-block;
@@ -105,7 +105,7 @@ main article div.article_text pre {
   margin: 22px 2px 22px 2px;
   padding: 2px;
   color: #000000;
-  border-left: 3px solid #0e94ec;
+  border-left: 3px solid #ec930e;
   font-size: 14px;
   font-family: 'PT Mono', monospace;
   background: #eeeeee;
@@ -138,21 +138,21 @@ main footer {
 }
 main footer a.button_accent {
   padding: 5px;
-  border: 2px solid #0e94ec;
+  border: 2px solid #ec930e;
   border-radius: 30px;
   -moz-border-radius: 30px;
   -webkit-border-radius: 30px;
   text-transform: uppercase;
-  color: #0e94ec;
+  color: #ec930e;
   font-size: 14px;
 }
 main footer a.button_accent:hover {
   color: #ffffff;
-  background-color: #0e94ec;
+  background-color: #ec930e;
 }
 main footer a.button_accent:active {
   color: #ffffff;
-  background-color: #0e94ec;
+  background-color: #ec930e;
 }
 main div#ending_message {
   padding: 0 40px 0 40px;
