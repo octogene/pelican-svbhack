@@ -27,6 +27,8 @@
   <link href="{{ SITEURL }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Full RSS Feed" />
   {% endif %}
 
+  {% include "modules/piwik.html" %}
+  
   {% block head %}
   {% endblock %}
 
@@ -36,6 +38,7 @@
 
   {% include "modules/analytics.html" %}
 </head>
+
 
 <body>
   <aside>
@@ -119,6 +122,5 @@
     </div>
   </main>
   {% include "modules/idl.html" %}
-  {% include 'modules/piwik.html' %}
 </body>
 </html>
