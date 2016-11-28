@@ -134,6 +134,35 @@ main article div.flattr {
   width: 115px;
   height: 25px;
 }
+main article .note {
+  background: #eeeeee;
+  padding: 0px 0px 4px 4px;
+}
+main article .warning {
+  background: #eeeeee;
+  padding: 0px 0px 4px 4px;
+}
+main article .admonition-title::before {
+  content: "\f06a";
+  margin-right: 6px;
+  font-family: "FontAwesome";
+}
+main article .admonition-title {
+  margin-left: -4px;
+  margin-bottom: 4px;
+  padding: 0px 0px 0px 4px;
+  color: white;
+}
+main article .warning .admonition-title {
+  background: #d7431bcc;
+}
+main article .note .admonition-title {
+  background: #8fc0becc;
+}
+main article .last {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
 main footer {
   border-top: #eeeeee 1px solid;
   border-bottom: #eeeeee 1px solid;

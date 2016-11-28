@@ -26,6 +26,14 @@
       {% endfor %}
     </p>
     {% endif %}
+    {% if SITEURL and HASHOVER and article.status != "draft" %}
+    <div class="comments">
+	  <h2>Comments?</h2>
+        <script type="text/javascript" src="/hashover/hashover.js"></script>
+  	<noscript>Please enable JavaScript to view the comments.</noscript>
+    </div>
+    {% endif %}
+
     {% if DISQUS_SITENAME %}
     <p>{% trans %}Comments{% endtrans %}: <a href="#" onclick="javascript:toggleComments();return false;">toggle</a></p>
     {% endif %}
