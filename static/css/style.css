@@ -24,7 +24,7 @@ aside div.social {
     text-align: center;
 }
 aside div.social a:hover {
-    color: #ec930e
+    color: #ff7a01
 }
 aside div#lang_buttons {
     text-align: left;
@@ -170,21 +170,26 @@ main footer {
 }
 main footer a.button_accent {
   padding: 5px;
-  border: 2px solid #ec930e;
+  border: 2px solid #ff7a01;
   border-radius: 30px;
   -moz-border-radius: 30px;
   -webkit-border-radius: 30px;
   text-transform: uppercase;
-  color: #ec930e;
+  color: #ff7a01;
   font-size: 14px;
 }
 main footer a.button_accent:hover {
   color: #ffffff;
-  background-color: #ec930e;
+  background-color: #ff7a01;
 }
 main footer a.button_accent:active {
   color: #ffffff;
-  background-color: #ec930e;
+  background-color: #ff7a01;
+}
+main footer a.button_accent::before {
+  content: "\f060";
+  font-family: "FontAwesome";
+  margin-right: 6px;
 }
 main div#ending_message {
   padding: 0 40px 0 40px;
