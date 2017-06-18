@@ -167,21 +167,21 @@ main article .last {
   margin-bottom: 0px;
   margin-top: 0px;
 }
-main article table {
+main article table.docutils {
   border-collapse: collapse;
   border-spacing: 0px;
   margin-left: auto;
   margin-right: auto;
 }
-main article td,th {
+main article table.docutils td,th {
   border: 1px solid #CCC;
   height: 30px;
 }
-main article th {
+main article table.docutils th {
   background: #F3F3F3;
   font-weight: bold;
 }
-main article td {
+main article table.docutils td {
   background: #FAFAFA;
   text-align: center;
 }
