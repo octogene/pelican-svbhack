@@ -7,6 +7,9 @@
 
 {% block header %}
 <p>{% trans %}Posted on{% endtrans %} {{ article.locale_date }}</p>
+{% if article.modified %}
+<p id="modified">{% trans %}Updated on{% endtrans %} {{ article.modified|strftime('%d %b %Y') }}</p>
+{% endif %}
 {% endblock %}
 
 {% block content %}
