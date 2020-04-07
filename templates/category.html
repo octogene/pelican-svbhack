@@ -3,19 +3,19 @@
 
 {% block head %}
 {% if CATEGORY_FEED_ATOM %}
-<link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(category) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} {{ category }} Category Atom Feed" />
+<link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(slug=category) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} {{ category }} Category Atom Feed" />
 {% endif %}
 {% if CATEGORY_FEED_RSS %}
-<link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_RSS|format(category) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} {{ category }} Category RSS Feed" />
+<link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_RSS|format(slug=category) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} {{ category }} Category RSS Feed" />
 {% endif %}
 {% endblock %}
 
 {% block header %}
 <p>{% trans %}Category{% endtrans %}: {{ category }}
 {% if CATEGORY_FEED_ATOM %}
-&#124; <a href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(category) }}">{% trans %}Atom Feed{% endtrans %}</a>
+&#124; <a href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(slug=category) }}">{% trans %}Atom Feed{% endtrans %}</a>
 {% endif %}
 {% if CATEGORY_FEED_RSS %}
-&#124; <a href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_RSS|format(category) }}">{% trans %}RSS Feed{% endtrans %}</a>
+&#124; <a href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_RSS|format(slug=category) }}">{% trans %}RSS Feed{% endtrans %}</a>
 {% endif %}</p>
 {% endblock %}
