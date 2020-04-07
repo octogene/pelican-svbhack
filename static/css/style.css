@@ -1,8 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #fcfcfc;
-  color: #4d4d4d;
+  background-color: #f0efd1;
+  color: #1b1b1b;
   font-family: 'PT Sans', sans-serif;
   font-size: 18px;
 }
@@ -11,8 +11,8 @@ a {
   text-decoration: none;
 }
 hr {
-  color: #eeeeee;
-  background-color: #eeeeee;
+  color: #c0bfa7;
+  background-color: #c0bfa7;
   height: 1px;
   border: none;
 }
@@ -70,7 +70,7 @@ aside div#user_meta ul li {
 }
 aside div#user_meta ul li a {
   padding: 5px 15px 5px 15px;
-  border: 3px solid #eeeeee;
+  border: 3px solid #c0bfa7;
   border-radius: 15px;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
@@ -78,8 +78,8 @@ aside div#user_meta ul li a {
 }
 main header {
   padding: 40px;
-  border-top: #eeeeee 1px solid;
-  border-bottom: #eeeeee 1px solid;
+  border-top: #c0bfa7 1px solid;
+  border-bottom: #c0bfa7 1px solid;
 }
 main header p {
   font-weight: bold;
@@ -102,7 +102,7 @@ main article div.article_text code {
   color: #000000;
   font-size: 14px;
   font-family: 'PT Mono', monospace;
-  background: #eeeeee;
+  background: #c0bfa7;
 }
 main article div.linenodiv pre {
   border-left: none !important;
@@ -115,7 +115,7 @@ main article div.article_text pre {
   border-left: 3px solid #ec930e;
   font-size: 14px;
   font-family: 'PT Mono', monospace;
-  background: #eeeeee;
+  background: #fafafa;
   line-height: 1.125em;
   overflow-x: auto;
 }
@@ -139,11 +139,11 @@ main article div.flattr {
   height: 25px;
 }
 main article .note {
-  background: #eeeeee;
+  background: #c0bfa7;
   padding: 0px 0px 4px 4px;
 }
 main article .warning {
-  background: #eeeeee;
+  background: #c0bfa7;
   padding: 0px 0px 4px 4px;
 }
 main article .admonition-title::before {
@@ -186,8 +186,8 @@ main article table.docutils td {
   text-align: center;
 }
 main footer {
-  border-top: #eeeeee 1px solid;
-  border-bottom: #eeeeee 1px solid;
+  border-top: #c0bfa7 1px solid;
+  border-bottom: #c0bfa7 1px solid;
   padding: 40px;
 }
 main footer a.button_accent {
@@ -225,7 +225,7 @@ main div#ending_message {
     position: fixed;
     top: 0;
     left: 0;
-    border-right: #eeeeee 1px solid;
+    border-right: #c0bfa7 1px solid;
     text-align: center;
   }
   aside h2 {
